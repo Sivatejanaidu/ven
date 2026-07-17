@@ -1,6 +1,8 @@
 name: Hello world                                       # Name of the work flow  
 on:                                                     # Triggers when this workflow should trigger
- push                                                   # workflow_dispatch trigger used for manual trigger
+ push:
+   branches:
+     - main                                             # workflow_dispatch trigger used for manual trigger
 jobs:
   hello-world:                                          # name of the job
     runs-on: ubuntu-latest
