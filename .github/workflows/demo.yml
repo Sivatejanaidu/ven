@@ -13,7 +13,7 @@ on:                                                     # Triggers when this wor
       - main                               # workflow_dispatch trigger used for manual trigger
 jobs:
   hello-world:                                          # name of the job
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latestcd 
     steps:
     - name: hello-step
       run: echo " hello shiva"
@@ -28,4 +28,4 @@ jobs:
     needs : build
     steps:
     - name: test-step
-      run : echo "hello venshika naidu"
+      run : echo "hello venshika naidu akula"
