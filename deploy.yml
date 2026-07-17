@@ -3,6 +3,8 @@ on:
   workflow_run:
     workflows:
     - test-demo
+    types:
+    - completed
 jobs:
   deploy-job:
     runs-on: ubuntu-latest
