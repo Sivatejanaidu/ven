@@ -1,6 +1,6 @@
 name: actions demo
 on:
- push
+ push:
 jobs:
   action-demo:
     runs-on: ubuntu-latest
