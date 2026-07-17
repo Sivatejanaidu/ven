@@ -1,13 +1,13 @@
-name: Hello world        # Name of the work flow  
-on:                      # Triggers when this workflow should trigger
- workflow_dispatch       # workflow_dispatch trigger used for manual trigger
+name: Hello world                                       # Name of the work flow  
+on:                                                     # Triggers when this workflow should trigger
+ push                                                   # workflow_dispatch trigger used for manual trigger
 jobs:
-  hello-world:          # name of the job
+  hello-world:                                          # name of the job
     runs-on: ubuntu-latest
     steps:
     - name: hello-step
       run: echo " hello shiva"
-  build:                # name of the job
+  build:                                                # name of the job
     runs-on: ubuntu-latest
     needs : hello-world
     steps:
@@ -18,4 +18,4 @@ jobs:
     needs : build
     steps:
     - name: test-step
-      run : echo "hello venshika"
+      run : echo "hello venshika naidu"
