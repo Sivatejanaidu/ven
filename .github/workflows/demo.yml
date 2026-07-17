@@ -2,7 +2,15 @@ name: Hello world                                       # Name of the work flow
 on:                                                     # Triggers when this workflow should trigger
  push:
    branches:
-     - main                                             # workflow_dispatch trigger used for manual trigger
+     - main
+     - develop
+ pull_request:
+    types:
+    - opened
+    - synchronize
+    - closed 
+    branches:
+      - main                               # workflow_dispatch trigger used for manual trigger
 jobs:
   hello-world:                                          # name of the job
     runs-on: ubuntu-latest
