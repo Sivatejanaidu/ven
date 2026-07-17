@@ -1,0 +1,11 @@
+name: test-demo
+on:
+ workflow_run:
+    workflows: 
+    - build-demo
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: test stage
+      run: echo "Test stage"

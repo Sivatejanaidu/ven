@@ -1,0 +1,11 @@
+name: Build-demo
+on:
+ push:
+    branches:
+      - develop
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: build stage
+      run: echo "Build stage"
