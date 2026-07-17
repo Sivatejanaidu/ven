@@ -29,3 +29,9 @@ jobs:
     steps:
     - name: test-step
       run : echo "hello venshika naidu akula"
+  deploy:
+    runs-on: ubuntu-latest
+    needs : build
+    steps:
+    - name: deploy
+      run : echo "Changes are deployed to production"      
