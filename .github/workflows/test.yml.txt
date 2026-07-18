@@ -1,0 +1,14 @@
+name: test-demo
+run-name: This was triggered by @${{ github.actor }}
+on:
+ workflow_run:
+    workflows: 
+    - build-demo
+    types:
+    - completed
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: test stage
+      run: echo "Test stage completed" 
