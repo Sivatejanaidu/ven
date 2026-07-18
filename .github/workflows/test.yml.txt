@@ -1,5 +1,8 @@
 name: test-demo
+<<<<<<< HEAD
 run-name: This was triggered by @${{ github.actor }}
+=======
+>>>>>>> main
 on:
  workflow_run:
     workflows: 

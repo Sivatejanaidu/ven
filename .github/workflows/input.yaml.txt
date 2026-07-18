@@ -1,0 +1,29 @@
+name: Input-demo
+on:
+  workflow_dispatch:
+    inputs:
+      Agent_Name:
+        description: 'Enter the name of the agent'
+        required: true
+        default: 'bnext'
+      Image_Tag:
+        description: 'Enter the image tag'
+        required: true
+        default: 'v1.0.0'
+        type: choice
+        options:
+          - v1.0.0
+          - v1.0.1
+          - v1.0.2
+jobs:
+  input-job:
+    runs-on: ubuntu-latest
+    steps:         
+    - name: agent selection
+      run: echo "Agent name is ${{ inputs.Agent_Name }}"
+
+    - name: image selection
+      run: echo "Image tag is ${{ inputs.Image_Tag }}"
+
+    - name: build stage
+      run: echo "Build stage completed with ${{ inputs.Agent_Name }} and ${{ inputs.Image_Tag }}"

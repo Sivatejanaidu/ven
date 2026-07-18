@@ -3,7 +3,7 @@ run-name: This was triggered by @${{ github.actor }}
 on:
  push:
     branches:
-      - develop
+      - main
 jobs:
   build-job:
     env:
@@ -11,4 +11,8 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
     - name: build stage
+<<<<<<< HEAD
+=======
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+>>>>>>> main
       run: echo "Build stage completed with ${APP_NAME}"  
