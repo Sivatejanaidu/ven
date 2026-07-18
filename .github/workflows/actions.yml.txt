@@ -1,0 +1,11 @@
+name: actions-demo
+on:
+ push:  
+jobs:
+  action-demo:
+    runs-on: ubuntu-latest
+    steps:
+    - name: git checkout
+      uses: actions/checkout@v7
+    - name: print index.htmls
+      run: cat index.html

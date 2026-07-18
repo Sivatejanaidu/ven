@@ -1,0 +1,13 @@
+name: deploy-demo
+on:
+  workflow_run:
+    workflows:
+    - test-demo
+    types:
+    - completed
+jobs:
+  deploy-job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: deploy stage
+      run: echo "Deploy stage"    
