@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: test stage
-      run: echo "Test stage"
+      run: echo "Test stage completed" 
