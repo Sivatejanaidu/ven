@@ -4,8 +4,8 @@ on:
     branches:
       - develop
 jobs:
-  build:
+  build-job:
     runs-on: ubuntu-latest
     steps:
     - name: build stage
-      run: echo "Build stage"
+      run: echo "Build stage completed"
