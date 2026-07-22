@@ -16,18 +16,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: build stage
-      run: echo "Build stage completed with ${env.APP_NAME}"
+      run: echo "Build stage completed with $APP_NAME"
 
   test_job:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request' &&  github.ref_name == 'main'    
     steps:
     - name: test stage
-      run: echo "Test stage completed with ${env.APP_NAME}"
+      run: echo "Test stage completed with $APP_NAME"
 
   deploy_job:
     runs-on: ubuntu-latest
     if: github.event_name == 'push' &&  github.ref_name == 'main'
     steps:
     - name: deploy stage
-      run: echo "Deploy stage completed with ${env.APP_NAME}"
+      run: echo "Deploy stage completed with $APP_NAME"
