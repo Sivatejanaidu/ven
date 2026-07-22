@@ -9,12 +9,13 @@ on:
       - opened
 env:
   APP_NAME: My App
+
 jobs:
   build job:
     runs-on: ubuntu-latest
     steps:
     - name: build stage
-      if: github.event_name == 'push' &&  github.ref == 'refs/heads/develop'
+      if: github.event_name == 'push' &&  github.ref_name== 'develop'
       run: echo "Build stage completed with ${env.APP_NAME}"
 
   Test job:
