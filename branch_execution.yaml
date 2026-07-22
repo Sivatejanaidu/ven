@@ -5,29 +5,29 @@ on:
      - main
      - develop
  pull_request:
-    types:
-      - opened
+    branches:
+      - main
 env:
   APP_NAME: My App
 
 jobs:
-  build job:
+  build_job:
+    if: github.event_name == 'push' &&  github.ref_name== 'develop'
     runs-on: ubuntu-latest
     steps:
     - name: build stage
-      if: github.event_name == 'push' &&  github.ref_name== 'develop'
       run: echo "Build stage completed with ${env.APP_NAME}"
 
-  Test job:
+  test_job:
     runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' &&  github.ref_name == 'main'    
     steps:
     - name: test stage
-      if: github.event_name == 'pull_request' &&  github.base_ref == 'main'
       run: echo "Test stage completed with ${env.APP_NAME}"
 
-  deploy job:
+  deploy_job:
     runs-on: ubuntu-latest
+    if: github.event_name == 'push' &&  github.ref_name == 'main'
     steps:
     - name: deploy stage
-      if: github.event_name == 'push' &&  github.ref == 'refs/heads/main'
       run: echo "Deploy stage completed with ${env.APP_NAME}"
