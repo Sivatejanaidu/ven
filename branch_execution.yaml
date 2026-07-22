@@ -1,0 +1,32 @@
+name: Branch Execution
+on:
+ push:
+   branches:
+     - main
+     - develop
+ pull_request:
+    types:
+      - opened
+env:
+  APP_NAME: My App
+jobs:
+  build job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: build stage
+      if: github.event_name == 'push' &&  github.ref == 'refs/heads/develop'
+      run: echo "Build stage completed with ${env.APP_NAME}"
+
+  Test job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: test stage
+      if: github.event_name == 'pull_request' &&  github.base_ref == 'main'
+      run: echo "Test stage completed with ${env.APP_NAME}"
+
+  deploy job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: deploy stage
+      if: github.event_name == 'push' &&  github.ref == 'refs/heads/main'
+      run: echo "Deploy stage completed with ${env.APP_NAME}"
