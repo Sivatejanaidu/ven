@@ -1,0 +1,16 @@
+name: matrix
+on:
+  workflow_dispatch: 
+  
+jobs:
+  matrix_example:
+    strategy:
+      matrix:
+        version: [10, 12, 14]
+        os: [ubuntu-latest, windows-latest] 
+    runs-on: ${{ matrix.os }}
+    steps:
+    - name: node setup
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.version }}
