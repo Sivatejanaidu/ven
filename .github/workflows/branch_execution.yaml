@@ -23,7 +23,7 @@ jobs:
     if: github.event_name == 'pull_request' &&  github.ref_name == 'main'    
     steps:
     - name: test stage
-      run: echo "Test stage completed with $APP_NAME"
+      run: echo "Test stage completed with  the $APP_NAME"
 
   deploy_job:
     runs-on: ubuntu-latest
