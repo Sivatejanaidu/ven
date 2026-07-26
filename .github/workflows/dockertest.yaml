@@ -22,7 +22,7 @@ jobs:
       run: docker tag my-image sivatejanaidu78/latest
 
     - name: push images
-      run: docker push sivatehanaidu78/latest
+      run: docker push sivatejanaidu78/latest
 
     - name: image size
       run: docker images
