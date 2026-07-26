@@ -16,4 +16,4 @@ jobs:
       run: docker tag my-image my-image:latest
 
     - name: image size
-      run: docker images ls  
+      run: docker images
