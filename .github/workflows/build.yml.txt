@@ -11,8 +11,5 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
     - name: build stage
-<<<<<<< HEAD
-=======
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
->>>>>>> main
-      run: echo "Build stage completed with ${APP_NAME}"  
+      run: echo "Build stage completed with ${APP_NAME}"
