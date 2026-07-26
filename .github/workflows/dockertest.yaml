@@ -27,4 +27,7 @@ jobs:
     - name: image size
       run: docker images
 
+    - name : run container
+      run: docker run -d -p 8080:80 my-image  
+
 
