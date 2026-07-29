@@ -8,4 +8,4 @@ on:
     
 jobs:
   call-workflow:
-    uses: Sivatejanaidu/ven/blob/develop/.github/workflows/dockertest.yaml
+    uses: Sivatejanaidu/ven/blob/develop/.github/workflows/dockertest.yaml@develop
