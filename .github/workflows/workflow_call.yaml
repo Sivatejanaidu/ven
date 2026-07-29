@@ -9,6 +9,6 @@ on:
 jobs:
   call-workflow:
     uses: ./.github/workflows/dockertest.yaml
-    with:
-      password: ${{ secrets.DOCKER_PASSWORD}} 
+    secrets:
+      personal_access_token: ${{ secrets.token }}
 #    

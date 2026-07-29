@@ -1,6 +1,9 @@
 name: docker test
 on:
   workflow_call:
+    secrets:
+      personal_access_token:
+        required: true  
 
 jobs:
   docker:
