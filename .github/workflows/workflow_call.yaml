@@ -1,0 +1,11 @@
+name: Call a reusable workflow
+
+on:
+  pull_request:
+    branches:
+      - develop
+  workflow_dispatch:
+    
+jobs:
+  call-workflow:
+    uses: Sivatejanaidu/ven/blob/develop/.github/workflows/dockertest.yaml

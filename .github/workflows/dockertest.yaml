@@ -1,6 +1,6 @@
 name: docker test
 on:
-  workflow_dispatch:
+  workflow_call:
 
 jobs:
   docker:
@@ -19,15 +19,13 @@ jobs:
       run: docker build -t my-image .
 
     - name: Tag image
-      run: docker tag my-image sivatejanaidu78/latest:v1
+      run: docker tag my-image sivatejanaidu78/latest:v2
 
     - name: push images
-      run: docker push sivatejanaidu78/latest:v1
+      run: docker push sivatejanaidu78/latest:v2
 
     - name: image size
       run: docker images
-
-    - name : run container
-      run: docker run -d -p 8080:80 my-image  
+ 
 
 
