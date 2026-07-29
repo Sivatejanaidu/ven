@@ -10,5 +10,5 @@ jobs:
   call-workflow:
     uses: ./.github/workflows/dockertest.yaml
     secrets:
-      personal_access_token: ${{ secrets.token }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD}}
 #    
