@@ -4,8 +4,7 @@ on:
  push: 
   branches:
     - develop
- workflow_dispatch:
- 
+
 jobs:
   passout:
     runs-on: ubuntu-latest
@@ -21,5 +20,5 @@ jobs:
    needs: passout
    steps:
    - name: access outputs
-     run: echo "tag version of image is ${{needs.passout.outputs.output1}}"
+     run: echo "Tag version of image was ${{needs.passout.outputs.output1}}"
       
