@@ -13,7 +13,7 @@ jobs:
     steps:
     - name: image tag
       id: tag1
-      run: echo "Image_Tag=1.0.5" >> "$GITHUB_OUTPUT"
+      run: echo "ImageTag=1.0.5" >> $GITHUB_OUTPUT
 	
   accessoutputs:
    runs-on: ubuntu-latest
