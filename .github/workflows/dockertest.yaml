@@ -35,7 +35,7 @@ jobs:
 
     - name: output image tag
       id: tag1
-      run: echo "ImageTag=${{ github.sha::7 }}" >> "$GITHUB_OUTPUT"  
+      run: echo "ImageTag=${github.sha::7}" >> "$GITHUB_OUTPUT"  
  
 
 
