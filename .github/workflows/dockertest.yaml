@@ -21,6 +21,10 @@ jobs:
         username: ${{ vars.DOCKER_USERNAME}}
         password: ${{ secrets.DOCKER_PASSWORD}}   
 
+    - name: output image tag
+      id: tag1
+      run: echo "ImageTag=${github.sha::7}" >> "$GITHUB_OUTPUT"        
+
     - name: Build Image
       run: docker build -t businessnext-app .
 
@@ -31,11 +35,7 @@ jobs:
       run: docker push sivatejanaidu78/businessnext-app:${{ steps.tag1.outputs.ImageTag }}
       
     - name: image size
-      run: docker images
-
-    - name: output image tag
-      id: tag1
-      run: echo "ImageTag=${github.sha::7}" >> "$GITHUB_OUTPUT"  
+      run: docker images  
  
 
 
