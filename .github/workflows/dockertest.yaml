@@ -8,6 +8,9 @@ on:
 jobs:
   docker:
     runs-on: ubuntu-latest
+    outputs:
+      imagetag: ${{ steps.tag1.outputs.ImageTag }}
+
     steps:
     - name: Checkout
       uses: actions/checkout@v3 
@@ -22,13 +25,17 @@ jobs:
       run: docker build -t my-image .
 
     - name: Tag image
-      run: docker tag my-image sivatejanaidu78/latest:v2
+      run: docker tag my-image sivatejanaidu78/businessnext-app: "${{ github.sha }}"
 
     - name: push images
-      run: docker push sivatejanaidu78/latest:v2
-
+      run: docker push sivatejanaidu78/businessnext-app:${{ github.sha }}
+      
     - name: image size
       run: docker images
+
+    #- name: output image tag
+     # id: tag1
+      #run: echo "ImageTag=1.0.5" >> "$GITHUB_OUTPUT"  
  
 
 
