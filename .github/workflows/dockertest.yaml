@@ -4,7 +4,10 @@ on:
     secrets:
       DOCKER_PASSWORD:
         required: true
-
+    outputs:
+     ImageTag:
+       description: 'Image Tag'
+       value: ${{ jobs.docker.outputs.imagetag }}
 jobs:
   docker:
     runs-on: ubuntu-latest
