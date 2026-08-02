@@ -25,10 +25,10 @@ jobs:
       run: docker build -t businessnext-app .
 
     - name: Tag image
-      run: docker tag businessnext-app sivatejanaidu78/businessnext-app:${{ github.sha::7 }}
+      run: docker tag businessnext-app sivatejanaidu78/businessnext-app:${{ steps.tag1.outputs.ImageTag }}
 
     - name: push images
-      run: docker push sivatejanaidu78/businessnext-app:${{ github.sha::7 }}
+      run: docker push sivatejanaidu78/businessnext-app:${{ steps.tag1.outputs.ImageTag }}
       
     - name: image size
       run: docker images
