@@ -18,4 +18,4 @@ jobs:
     needs: call-workflow
     steps:
     - name: deploy
-      run: echo "Deploying the image ${{needs.call-workflow.outputs.ImageTag}}..."
+      run: echo "Deploying the imagee ${{needs.call-workflow.outputs.ImageTag}}..."
